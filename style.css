@@ -1,0 +1,206 @@
+/* ---------- colours: black, beige and emerald (change them here) ---------- */
+:root {
+  --bg: #f6f0e4;          /* beige */
+  --bg-2: #ede4d2;        /* darker beige for alternate sections */
+  --card: #fbf8f1;
+  --black: #141413;       /* headings and dark buttons */
+  --text: #4a463f;
+  --muted: #7d776b;
+  --emerald: #0f7b5a;     /* accent */
+  --emerald-deep: #0b5e45;
+  --line: #d9cdb4;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--black);
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+h1, h2, h3 { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; margin: 0; line-height: 1.15; }
+em { font-style: italic; color: var(--emerald); }
+p { margin: 0 0 12px; }
+a { color: inherit; }
+
+/* small uppercase labels used all over the page */
+.label { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 500; color: var(--emerald-deep); }
+.muted { color: var(--muted); }
+
+/* ---------- navigation bar ---------- */
+#navbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(246, 240, 228, 0.95);
+  border-bottom: 1px solid var(--line);
+}
+.nav-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  height: 80px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+.monogram {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--emerald);
+  background: rgba(15, 123, 90, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--emerald-deep);
+}
+.brand-name { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; line-height: 1; display: block; }
+.brand small { font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); display: block; margin-top: 4px; }
+
+#menu { display: flex; gap: 26px; list-style: none; margin: 0; padding: 0; }
+#menu a {
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--text);
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.3s, color 0.3s;
+}
+#menu a:hover { color: var(--black); border-bottom-color: var(--emerald); }
+
+#menu-btn { display: none; background: none; border: 1px solid var(--line); padding: 8px 12px; font-size: 18px; cursor: pointer; }
+
+/* ---------- buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 14px 28px;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid var(--emerald);
+  background: none;
+  color: var(--black);
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.3s, color 0.3s;
+}
+.btn:hover { background: var(--bg-2); }
+.btn.dark { background: var(--black); border-color: var(--black); color: var(--bg); }
+.btn.dark:hover { background: #33312d; }
+.buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+
+/* ---------- page sections ---------- */
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+section { padding: 96px 0; }
+.alt { background: var(--bg-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+
+.section-head { margin-bottom: 56px; }
+.section-head .label { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.numeral { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; color: var(--emerald); letter-spacing: 0; text-transform: none; }
+.section-head h2 { font-size: 46px; font-weight: 300; }
+
+/* ---------- hero ---------- */
+#profile { padding: 90px 0 110px; }
+.hero { display: grid; grid-template-columns: 2fr 1fr; gap: 64px; align-items: center; }
+.hero h1 { font-size: 64px; font-weight: 300; line-height: 1.07; margin: 26px 0 30px; }
+.hero p.intro { font-size: 18px; color: var(--text); max-width: 620px; margin-bottom: 40px; }
+.eyebrow { display: flex; align-items: center; gap: 14px; }
+.eyebrow .line { width: 32px; height: 1px; background: var(--emerald); }
+
+.facts { margin-top: 60px; padding-top: 24px; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; font-size: 13px; }
+.facts small { display: block; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.facts b { font-weight: 500; }
+
+/* photo frame with gold-style corners in emerald */
+.frame {
+  position: relative;
+  max-width: 340px;
+  margin: 0 auto;
+  padding: 26px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  text-align: center;
+}
+.frame .corner { position: absolute; width: 20px; height: 20px; border: 0 solid var(--emerald); }
+.corner.tl { top: 0; left: 0; border-top-width: 2px; border-left-width: 2px; }
+.corner.tr { top: 0; right: 0; border-top-width: 2px; border-right-width: 2px; }
+.corner.bl { bottom: 0; left: 0; border-bottom-width: 2px; border-left-width: 2px; }
+.corner.br { bottom: 0; right: 0; border-bottom-width: 2px; border-right-width: 2px; }
+.frame-top { display: flex; justify-content: space-between; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+.arch {
+  width: 190px;
+  height: 235px;
+  margin: 26px auto 20px;
+  border-radius: 95px 95px 0 0;
+  border: 2px solid var(--emerald);
+  padding: 5px;
+  background: var(--bg);
+}
+.arch img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 90px 90px 0 0; display: block; }
+.frame h2 { font-size: 28px; }
+.frame .role { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--emerald-deep); margin-top: 6px; }
+.frame-foot { margin-top: 22px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 12px; color: var(--text); }
+
+/* ---------- timeline rows (education, experience) ---------- */
+.rows { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.row { display: grid; grid-template-columns: 1fr 2fr; gap: 40px; padding: 40px 0; border-bottom: 1px solid var(--line); }
+.row:last-child { border-bottom: none; }
+.row h3 { font-size: 32px; }
+.row .sub { font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; font-size: 20px; color: var(--emerald); margin-top: 4px; }
+.row ul { list-style: none; padding: 0; margin: 20px 0 0; font-size: 14px; color: var(--text); }
+.row li { position: relative; padding-left: 22px; margin-bottom: 10px; }
+.row li::before { content: ""; position: absolute; left: 0; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: var(--emerald); }
+
+/* IIMB year-by-year timeline */
+.years { margin-top: 24px; padding-left: 24px; border-left: 1px solid var(--emerald); }
+.years div { position: relative; margin-bottom: 16px; font-size: 14px; color: var(--text); }
+.years div::before { content: ""; position: absolute; left: -29px; top: 8px; width: 9px; height: 9px; border-radius: 50%; background: var(--emerald); }
+.years b { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; font-weight: 600; color: var(--black); margin-right: 8px; }
+
+/* ---------- credentials: two columns ---------- */
+.panel { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg); border: 1px solid var(--line); }
+.panel > div { padding: 48px; }
+.panel > div:first-child { border-right: 1px solid var(--line); }
+.panel h3 { font-size: 30px; margin: 18px 0 8px; }
+.group { padding-top: 20px; margin-top: 20px; border-top: 1px solid var(--line); font-size: 14px; color: var(--text); }
+.group:first-of-type { border-top: none; margin-top: 0; padding-top: 0; }
+.group b { display: block; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 500; color: var(--black); margin-bottom: 6px; }
+
+/* ---------- footer ---------- */
+footer { text-align: center; padding: 96px 24px 40px; }
+footer h2 { font-size: 46px; font-weight: 300; max-width: 700px; margin: 20px auto; }
+footer p { max-width: 560px; margin: 0 auto 36px; font-size: 14px; color: var(--text); }
+.links { margin-top: 36px; display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase; }
+.links a { text-decoration: none; color: var(--text); border-bottom: 1px solid var(--emerald); padding-bottom: 2px; }
+.links a:hover { color: var(--black); }
+.copyright { margin: 64px auto 0; max-width: 1120px; padding-top: 28px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); }
+
+/* ---------- tablets and phones ---------- */
+@media (max-width: 900px) {
+  #menu { display: none; position: absolute; top: 80px; left: 0; right: 0; flex-direction: column; gap: 14px; padding: 20px 24px; background: var(--bg); border-bottom: 1px solid var(--line); }
+  #menu.open { display: flex; }
+  #menu-btn { display: block; }
+  .hero, .row, .panel { grid-template-columns: 1fr; }
+  .hero { gap: 48px; }
+  .hero h1 { font-size: 42px; }
+  .section-head h2, footer h2 { font-size: 34px; }
+  .facts { grid-template-columns: 1fr; }
+  .row { gap: 12px; }
+  .panel > div { padding: 30px 24px; }
+  .panel > div:first-child { border-right: none; border-bottom: 1px solid var(--line); }
+  section { padding: 64px 0; }
+}
